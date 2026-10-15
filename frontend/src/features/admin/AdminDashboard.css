@@ -1,0 +1,222 @@
+.admin-dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.admin-heading h2 {
+    margin: 0 0 8px;
+    font-size: 26px;
+    color: #1e293b;
+}
+
+.admin-heading p {
+    margin: 0;
+    color: #64748b;
+}
+
+.admin-navigation {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.admin-navigation button {
+    padding: 11px 18px;
+    border: 1px solid #e2e8f0;
+    border-radius: 9px;
+    background: white;
+    color: #475569;
+    font-family: inherit;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-navigation button:hover {
+    background: #eff6ff;
+}
+
+.admin-navigation button.active {
+    background: #2563eb;
+    border-color: #2563eb;
+    color: white;
+}
+
+.admin-panel {
+    background: white;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+}
+
+.admin-panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.admin-panel-heading h3 {
+    margin: 0 0 6px;
+    font-size: 20px;
+    color: #1e293b;
+}
+
+.admin-panel-heading p {
+    margin: 0;
+    color: #64748b;
+    font-size: 13px;
+}
+
+.admin-primary-button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    background: #2563eb;
+    color: white;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-primary-button:hover:not(:disabled) {
+    background: #1d4ed8;
+}
+
+.admin-primary-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.admin-form {
+    padding: 24px;
+    margin-bottom: 24px;
+    border: 1px solid #dbeafe;
+    border-radius: 12px;
+    background: #f8fafc;
+}
+
+.admin-form h4 {
+    margin: 0 0 20px;
+    color: #1e293b;
+}
+
+.admin-form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    margin-bottom: 20px;
+}
+
+.admin-field {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    color: #334155;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-field input,
+.admin-field select {
+    width: 100%;
+    padding: 11px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #1e293b;
+    font: inherit;
+    font-weight: 400;
+    box-sizing: border-box;
+}
+
+.admin-field input:focus,
+.admin-field select:focus {
+    outline: 2px solid #93c5fd;
+    border-color: #2563eb;
+}
+
+.admin-table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.admin-table th {
+    padding: 14px;
+    background: #f1f5f9;
+    color: #475569;
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.admin-table td {
+    padding: 14px;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+    color: #334155;
+}
+
+.admin-table tbody tr:hover {
+    background: #f8fafc;
+}
+
+.admin-error {
+    color: #dc2626;
+    font-size: 14px;
+}
+
+.admin-empty {
+    padding: 24px;
+    text-align: center;
+    color: #64748b;
+}
+
+@media (max-width: 650px) {
+    .admin-panel {
+        padding: 16px;
+    }
+
+    .admin-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .admin-panel-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.admin-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.admin-cancel-button {
+    padding: 11px 18px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    background: white;
+    color: #475569;
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.admin-cancel-button:hover:not(:disabled) {
+    background: #f1f5f9;
+}
+
+.admin-cancel-button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}

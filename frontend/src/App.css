@@ -1,0 +1,95 @@
+#root {
+  min-height: 100vh;
+}
+
+/* Login */
+
+.auth-layout {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 420px;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.08);
+  box-sizing: border-box;
+}
+
+.auth-card>h1 {
+  text-align: center;
+  margin: 0 0 8px;
+  color: #1e293b;
+}
+
+.auth-card>p {
+  text-align: center;
+  color: #64748b;
+  margin-bottom: 30px;
+}
+
+/* Application */
+
+.application-layout {
+  min-height: 100vh;
+  background: #f1f5f9;
+}
+
+.application-content {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 32px;
+  box-sizing: border-box;
+}
+
+/* Dashboard placeholders */
+
+.dashboard-message {
+  padding: 32px;
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+}
+
+.dashboard-message h2 {
+  margin-top: 0;
+  color: #1e293b;
+}
+
+.dashboard-message p {
+  color: #64748b;
+}
+
+/* Session loading */
+
+.loading-screen {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #64748b;
+}
+
+/* Responsive */
+
+@media (max-width: 600px) {
+  .auth-card {
+    padding: 24px;
+  }
+
+  .application-content {
+    padding: 16px;
+  }
+
+  .dashboard-message {
+    padding: 20px;
+  }
+}

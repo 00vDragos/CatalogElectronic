@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+
+# Environment variables
+.env
+.env.*
+!.env.example
+
+# Build output
+dist/
+build/
+coverage/
+*.tsbuildinfo
+
+# Logs
+*.log
+
+# IDE and OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Generated Prisma client
+**/src/generated/prisma/
+
+# Temporary files
+*.tmp
+*.bak
+
+# Temporary Git metadata backup
+backend/git-backup/

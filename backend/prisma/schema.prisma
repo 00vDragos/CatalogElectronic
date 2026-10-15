@@ -1,0 +1,111 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Get a free hosted Postgres database in seconds: `npx create-db`
+
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  TEACHER
+  STUDENT
+}
+
+model User {
+  id           Int    @id @default(autoincrement())
+  email        String @unique
+  passwordHash String
+  role         Role
+
+  student Student?
+  teacher Teacher?
+}
+
+model Student {
+  id        Int     @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String  @unique
+  cnp       String  @unique
+  phone     String?
+
+  classId     Int?
+  schoolClass SchoolClass? @relation(fields: [classId], references: [id], onDelete: SetNull)
+
+  userId Int?  @unique
+  user   User? @relation(fields: [userId], references: [id])
+
+  grades Grade[]
+
+  @@index([lastName, firstName])
+  @@index([classId])
+}
+
+model Teacher {
+  id        Int    @id @default(autoincrement())
+  firstName String
+  lastName  String
+  email     String @unique
+
+  userId Int?  @unique
+  user   User? @relation(fields: [userId], references: [id])
+
+  assignments TeachingAssignment[]
+}
+
+model SchoolClass {
+  id         Int    @id @default(autoincrement())
+  name       String
+  schoolYear String
+
+  students    Student[]
+  assignments TeachingAssignment[]
+
+  @@unique([name, schoolYear])
+}
+
+model Subject {
+  id   Int    @id @default(autoincrement())
+  name String @unique
+
+  assignments TeachingAssignment[]
+}
+
+model TeachingAssignment {
+  id        Int @id @default(autoincrement())
+  teacherId Int
+  classId   Int
+  subjectId Int
+
+  teacher     Teacher     @relation(fields: [teacherId], references: [id], onDelete: Restrict)
+  schoolClass SchoolClass @relation(fields: [classId], references: [id], onDelete: Restrict)
+  subject     Subject     @relation(fields: [subjectId], references: [id], onDelete: Restrict)
+
+  grades Grade[]
+
+  @@unique([classId, subjectId])
+  @@index([teacherId])
+  @@index([subjectId])
+}
+
+model Grade {
+  id        Int      @id @default(autoincrement())
+  value     Int
+  createdAt DateTime @default(now())
+
+  studentId    Int
+  assignmentId Int
+
+  student    Student            @relation(fields: [studentId], references: [id], onDelete: Restrict)
+  assignment TeachingAssignment @relation(fields: [assignmentId], references: [id], onDelete: Restrict)
+
+  @@index([studentId, assignmentId])
+  @@index([assignmentId])
+}

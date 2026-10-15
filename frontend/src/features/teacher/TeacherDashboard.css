@@ -1,0 +1,241 @@
+.teacher-dashboard {
+    margin-top: 0;
+}
+
+.teacher-dashboard h2 {
+    font-size: 22px;
+    color: #1e293b;
+}
+
+.teacher-dashboard>p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* Repartizările profesorului */
+
+.assignments-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 20px;
+}
+
+.assignment-card {
+    width: 100%;
+    padding: 18px;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    text-align: left;
+    cursor: pointer;
+    font-family: inherit;
+}
+
+.assignment-card h3 {
+    margin: 0 0 8px;
+    color: #2563eb;
+}
+
+.assignment-card p {
+    margin: 0 0 12px;
+    font-weight: 600;
+}
+
+.assignment-card span {
+    color: #64748b;
+    font-size: 12px;
+}
+
+.assignment-card:hover {
+    border-color: #93c5fd;
+    background: #eff6ff;
+}
+
+.assignment-card.selected {
+    border-color: #2563eb;
+    background: #dbeafe;
+}
+
+.assignment-card:focus-visible {
+    outline: 3px solid #2563eb;
+    outline-offset: 2px;
+}
+
+/* Repartizarea selectată */
+
+.selected-assignment {
+    margin-top: 24px;
+    padding: 20px;
+    border-radius: 12px;
+    background: #eff6ff;
+}
+
+.selected-assignment h3 {
+    margin-top: 0;
+    color: #1e40af;
+}
+
+/* Tabelul elevilor */
+
+.students-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.students-table th,
+.students-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+    font-size: 14px;
+}
+
+.students-table th {
+    background: #f1f5f9;
+    color: #475569;
+}
+
+.students-table button {
+    padding: 7px 12px;
+    border: none;
+    border-radius: 6px;
+    background: #dbeafe;
+    color: #1d4ed8;
+}
+
+.students-table button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* Responsive */
+
+@media (max-width: 480px) {
+    .assignments-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.student-grades {
+    margin-top: 20px;
+}
+
+.student-grades h3 {
+    color: #1e293b;
+}
+
+.student-grades button,
+.add-grade button {
+    padding: 8px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    background: white;
+    color: #1e293b;
+    cursor: pointer;
+}
+
+.student-grades button:hover:not(:disabled) {
+    background: #dbeafe;
+}
+
+.student-grades button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.grades-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0;
+}
+
+.grade-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+}
+
+.grade-item strong {
+    font-size: 18px;
+    color: #2563eb;
+}
+
+.add-grade {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.add-grade select {
+    padding: 8px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+/* Dashboard cu două coloane */
+
+.teacher-workspace {
+    display: grid;
+    grid-template-columns: minmax(240px, 30%) minmax(0, 1fr);
+    gap: 24px;
+    margin-top: 24px;
+    align-items: start;
+}
+
+.teacher-sidebar,
+.teacher-content {
+    padding: 24px;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    background: #f8fafc;
+    min-width: 0;
+}
+
+.teacher-sidebar h3,
+.teacher-content>h3 {
+    margin-top: 0;
+    color: #1e293b;
+}
+
+.teacher-sidebar .assignments-grid {
+    grid-template-columns: 1fr;
+}
+
+.teacher-content .students-table {
+    margin-top: 16px;
+}
+
+.dashboard-placeholder {
+    padding: 48px 16px;
+    text-align: center;
+    color: #64748b;
+}
+
+.dashboard-placeholder h3 {
+    color: #334155;
+}
+
+/* Tabletă și mobil */
+
+@media (max-width: 800px) {
+    .teacher-workspace {
+        grid-template-columns: 1fr;
+    }
+
+    .teacher-sidebar,
+    .teacher-content {
+        padding: 16px;
+    }
+}

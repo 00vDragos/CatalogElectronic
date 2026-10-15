@@ -1,0 +1,132 @@
+.app-header {
+    width: 100%;
+    background: #ffffff;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.app-header-inner {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 18px 32px;
+    box-sizing: border-box;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 24px;
+}
+
+.app-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.app-brand-icon {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+    border-radius: 12px;
+    font-size: 25px;
+}
+
+.app-brand-text h1 {
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.app-brand-text span {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.app-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.app-role {
+    padding: 8px 14px;
+    background: #f1f5f9;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: 600;
+    color: #475569;
+}
+
+.logout-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    padding: 10px 16px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: white;
+
+    color: #334155;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+
+    cursor: pointer;
+    transition: background 0.2s, border-color 0.2s;
+}
+
+.logout-button:hover {
+    background: #f8fafc;
+    border-color: #cbd5e1;
+}
+
+.logout-button:focus-visible {
+    outline: 3px solid #93c5fd;
+    outline-offset: 2px;
+}
+
+@media (max-width: 600px) {
+    .app-header-inner {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .app-brand-icon {
+        width: 40px;
+        height: 40px;
+        font-size: 21px;
+    }
+
+    .app-brand-text h1 {
+        font-size: 17px;
+    }
+
+    .app-brand-text span {
+        font-size: 11px;
+    }
+
+    .app-header-actions {
+        gap: 8px;
+    }
+
+    .app-role {
+        display: none;
+    }
+
+    .logout-button {
+        padding: 9px 11px;
+        font-size: 12px;
+    }
+}
